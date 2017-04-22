@@ -1,0 +1,38 @@
+//
+//  PrefixHeader.pch
+//  CellPhone
+//
+//  Created by Sam Feng on 16/5/6.
+//  Copyright © 2016年 zhiai. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "AFHTTPSessionManager.h"
+#import "SVProgressHUD.h"
+
+#define  mainWidth [UIScreen mainScreen].bounds.size.width
+#define  mainHeigth  [UIScreen mainScreen].bounds.size.height
+
+
+
+#endif /* PrefixHeader_pch */
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "WCUtil.h"
+#endif
+
+#pragma mark - System Version
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+#define IS_IOS6_OR_LATER    SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")
+#define IS_IOS7_OR_LATER    SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0")
